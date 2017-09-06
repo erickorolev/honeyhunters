@@ -2,30 +2,203 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<h2>HoneyHunters</h2>
+<div class="container background-black">
 
-<form name="form" action="controller.php" method="post">  
-	
-	Имя:<br>
-	<input class="for_dynamic" type="text" name="fname" >
-	<br><br>
-	
-	E-mail:<br>
-	<input class="for_dynamic" type="text" name="mname" >
-	<br><br>
-	
-	Комментарий:<br>
-	<textarea class="for_text" name="text" rows="5" cols="40" ></textarea>
-	<br><br>
-  
-	<input type="submit" name="submit" value="Записать">  
+<div class="row">
+
+		<div class="col-sm-2 col-md-offset-3">
+			<p><img src="images/logo_small.png" alt="Honey Hunters logo"></p>
+		</div>
+		
+		
+</div>
+
+<div class="row">
+		
+		<div class="col-sm-2 col-md-offset-5">
+			<p><img src="images/contact_icon.png" alt="Honey Hunters logo"></p>
+		</div>
+		
+</div>
+
+	<form name="form" action="sql.php" method="post">
+
+		<div class="row">
+			
+			<div class="col-sm-2 col-md-offset-3">
+
+				<div class="form-group required">
+					<label for="usr" class='control-label'>Имя</label>
+					<input type="text" class="form-control" id="usr" required="required">
+				</div>
+
+				<div class="form-group required">
+					<label for="email" class='control-label'>Email</label>
+					<input type="email" class="form-control" id="email" required="required">
+				</div>
+		
+			</div>
+		
+			<div class="form-group required">
+				<div class="col-sm-2">
+					<label for="comment" class='control-label'>Комментарий</label>
+					<textarea class="form-control" rows="5" id="comment" required="required"></textarea>
+				</div>
+			</div>
+		
+		</div>
+
+		<div class="row top-buffer bottom-buffer">
+			<div class="col-md-12 col-md-offset-6">
+				<button type="submit" class="btn btn-default button">Записать</button>
+			</div>
+		</div>
+
+	</form>
+
+</div>
+
+<div class="container top-buffer">
+
+	<div class="row">
+		<p class="text-center">Выводим комментарии</p>
 	</div>
-  
-</form>
+	
+	<div class="row top-buffer">
+	
+		<div class="col-sm-2 col-md-offset-3">
+			<div class="col-sm-12 comment-avtor-gray">
+			<p class="text-center">Вася</p>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-avtor-green">
+			<p class="text-center">Маруся</p>
+			</div>
+		</div>
+	
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-avtor-gray">
+			<p class="text-center">Вася</p>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row">
+
+		<div class="col-sm-2 col-md-offset-3">
+			<div class="col-sm-12 comment-email-gray">
+			<p class="text-center">vasya@mail.ru</p>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-email-green">
+			<p class="text-center">marusia@mail.ru</p>
+			</div>
+		</div>
+	
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-email-gray">
+			<p class="text-center">vasya@mail.ru</p>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="row">
+
+		<div class="col-sm-2 col-md-offset-3">
+			<div class="col-sm-12 comment-text-gray">
+			<p class="text-center">Сообщение от Василия Пупкина.</p>
+			</div>
+		</div>
+
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-text-green">
+			<p class="text-center">Всем привет, я Маруся</p>
+			</div>
+		</div>
+	
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-text-gray">
+			<p class="text-center">Сообщение от Василия Пупкина.</p>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row top-buffer">
+	
+		<div class="col-sm-2 col-md-offset-3">
+			<div class="col-sm-12 comment-avtor-green">
+			<p class="text-center">Маруся</p>
+			</div>
+		</div>
+	
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-avtor-gray">
+			<p class="text-center">Вася</p>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row">
+
+		<div class="col-sm-2 col-md-offset-3">
+			<div class="col-sm-12 comment-email-green">
+			<p class="text-center">marusia@mail.ru</p>
+			</div>
+		</div>
+	
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-email-gray">
+			<p class="text-center">vasya@mail.ru</p>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="row">
+
+		<div class="col-sm-2 col-md-offset-3">
+			<div class="col-sm-12 comment-text-green">
+			<p class="text-center">Всем привет, я Маруся</p>
+			</div>
+		</div>
+	
+		<div class="col-sm-2">
+			<div class="col-sm-12 comment-text-gray">
+			<p class="text-center">Сообщение от Василия Пупкина.</p>
+			</div>
+		</div>
+		
+	</div>
+
+</div>
+
+<div class="container background-black top-buffer">
+
+	<div class="row">
+
+		<div class="col-sm-8">
+			HoneyHunters	VK	Facebook
+		</div>
+		
+	</div>
+
+</div>
 
 </body>
 </html>
