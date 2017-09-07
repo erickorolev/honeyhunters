@@ -17,22 +17,22 @@ if ($conn->connect_error) {
 // Создаем таблицу "Комментарии"
 $sql = "CREATE TABLE comments (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-name VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-comment TEXT
+name NVARCHAR(30) NOT NULL,
+email NVARCHAR(50) NOT NULL,
+comment NVARCHAR(4000) NOT NULL
 )";
 */
 
 // Подготавливаем данные для формирования SQL запросов
 $name = $_POST['name'];
-$email = $_POST['e-mail'];
+$email = $_POST['email'];
 $comment = $_POST['comment'];
 
-
-// Вносим данные в таблицу
+// Формируем запрос на запись данных
 $sql = "INSERT INTO comments (name, email, comment)
-VALUES ('$name', '$email', '$comment')";
+VALUES (N'$name', '$email', N'$comment')";
 
+// Отправляем запрос серверу и проверяем ответ
 if ($conn->query($sql) === TRUE) {
     echo "Новая запись успешно создана";
 } else {
