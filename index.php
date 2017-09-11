@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="ajax.js"></script>
 </head>
 <body>
 
@@ -29,7 +30,7 @@
 		
 </div>
 
-	<form name="form" action="sql.php" method="post">
+	<form name="form" action="insertcomment.php" method="post">
 
 		<div class="row">
 			
@@ -74,25 +75,12 @@
 			</div>
 	</div>
 	
-<?php
-
-// В файле осуществляется подключение к базе данных и получение данных
-require 'getcomments.php';
-
-// Проверяем наличие данных
-if (mysqli_num_rows($result) > 0) {
-    // Отображаем данные
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "Name: " . $row["name"] . "<br>";
-		echo "Email: " . $row["email"] . "<br>";
-		echo "Comment: " . $row["comment"] . "<br>";
-    }
-} else {
-    echo "Нет комментариев";
-}
-
-?>
-	
+	<div class="row">
+			<div id="ajax" class="col-md-3 col-md-offset-5">
+				
+			</div>
+	</div>
+		
 	<div class="row">
 	
 		<div class="col-sm-2 col-md-offset-3 top-buffer">

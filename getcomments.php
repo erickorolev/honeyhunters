@@ -1,7 +1,5 @@
 <?php
 
-header('Content-type: text/html; charset=UTF-8');
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -21,6 +19,18 @@ mysqli_set_charset($conn,"utf8");
 // Формируем запрос на получение данных данных
 $sql = "SELECT * FROM comments";
 $result = mysqli_query($conn, $sql);
+
+// Проверяем наличие данных
+if (mysqli_num_rows($result) > 0) {
+    // Отображаем данные
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "Name: " . $row["name"] . "<br>";
+		echo "Email: " . $row["email"] . "<br>";
+		echo "Comment: " . $row["comment"] . "<br>";
+    }
+} else {
+    echo "Нет комментариев";
+}
 
 // Отключаемся от базы данных
 mysqli_close($conn);

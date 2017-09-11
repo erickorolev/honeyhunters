@@ -5,12 +5,12 @@ $password = "";
 $dbname = "honeyhunters";
 
 // Создаем подключение
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Проверяем подключение
-if ($conn->connect_error) {
-    die("Ошибка подключения к базе данных: " . $conn->connect_error);
-} 
+if (!$conn) {
+    die("Ошибка подключения к базе данных: " . mysqli_connect_error());
+}
 
 /*
 // Тут необходимо проверить, существует ли таблица. Если нет, то необходимо ее создать.
@@ -28,19 +28,22 @@ $name = clean_input($_POST['name']);
 $email = clean_input($_POST['email']);
 $comment = clean_input($_POST['comment']);
 
+// Устанавливаем  кодировку подключение UTF-8
+mysqli_set_charset($conn,"utf8");
+
 // Формируем запрос на запись данных
 $sql = "INSERT INTO comments (name, email, comment)
-VALUES (N'$name', '$email', N'$comment')";
+VALUES ('$name', '$email', '$comment')";
 
 // Отправляем запрос серверу и проверяем ответ
-if ($conn->query($sql) === TRUE) {
-    echo "Новая запись успешно создана";
+if (mysqli_query($conn, $sql)) {
+    echo "Новая запись создана";
 } else {
-	echo "Возникла ошибка при сзаписи: " . $sql . "<br>" . $conn->error;
+    echo "Ошибка при отправке запроса: " . $sql . "<br>" . mysqli_error($conn);
 }
 
 // Отключаемся от базы данных
-$conn->close();
+mysqli_close($conn);
 
 // Функция для преобразования введенных пользователем данных в целях безопасности и избавления от сторонних элементов.
 function clean_input($data) {
