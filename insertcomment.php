@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 } 
 
 /*
-// Тут необходимо проверить, существует ли база данных и таблица. Если нет, то необходимо ее создать.
+// Тут необходимо проверить, существует ли таблица. Если нет, то необходимо ее создать.
 // Создаем таблицу "Комментарии"
 $sql = "CREATE TABLE comments (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -24,9 +24,9 @@ comment NVARCHAR(4000) NOT NULL
 */
 
 // Подготавливаем данные для формирования SQL запросов
-$name = $_POST['name'];
-$email = $_POST['email'];
-$comment = $_POST['comment'];
+$name = clean_input($_POST['name']);
+$email = clean_input($_POST['email']);
+$comment = clean_input($_POST['comment']);
 
 // Формируем запрос на запись данных
 $sql = "INSERT INTO comments (name, email, comment)

@@ -69,12 +69,33 @@
 <div class="container top-buffer">
 
 	<div class="row">
-		<h4 class="text-center">Выводим комментарии</h4>
+			<div class="col-md-3 col-md-offset-5">
+				<button type="submit" class="btn btn-default button" onclick="getComments()">Выводим комментарии</button>
+			</div>
 	</div>
 	
-	<div class="row top-buffer">
+<?php
+
+// В файле осуществляется подключение к базе данных и получение данных
+require 'getcomments.php';
+
+// Проверяем наличие данных
+if (mysqli_num_rows($result) > 0) {
+    // Отображаем данные
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "Name: " . $row["name"] . "<br>";
+		echo "Email: " . $row["email"] . "<br>";
+		echo "Comment: " . $row["comment"] . "<br>";
+    }
+} else {
+    echo "Нет комментариев";
+}
+
+?>
 	
-		<div class="col-sm-2 col-md-offset-3">
+	<div class="row">
+	
+		<div class="col-sm-2 col-md-offset-3 top-buffer">
 			<div class="col-sm-12">
 			
 				<div class="row comment-avtor-gray">
@@ -90,7 +111,7 @@
 			</div>
 		</div>
 		
-		<div class="col-sm-2">
+		<div class="col-sm-2 top-buffer">
 			<div class="col-sm-12">
 			
 				<div class="row comment-avtor-green">
@@ -106,7 +127,7 @@
 			</div>
 		</div>
 		
-		<div class="col-sm-2">
+		<div class="col-sm-2 top-buffer">
 			<div class="col-sm-12">
 			
 				<div class="row comment-avtor-gray">
@@ -124,9 +145,9 @@
 	
 	</div>
 	
-	<div class="row top-buffer">
+	<div class="row">
 	
-		<div class="col-sm-2 col-md-offset-3">
+		<div class="col-sm-2 col-md-offset-3 top-buffer">
 			<div class="col-sm-12">
 			
 				<div class="row comment-avtor-green">
@@ -142,7 +163,7 @@
 			</div>
 		</div>
 		
-		<div class="col-sm-2">
+		<div class="col-sm-2 top-buffer">
 			<div class="col-sm-12">
 			
 				<div class="row comment-avtor-gray">
