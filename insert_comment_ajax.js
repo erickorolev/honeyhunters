@@ -3,16 +3,13 @@ $(document).ready(function(){
 	// При клике на кнопку "Записать".
 	$("#write").click(function() {
 		
-		// Присваиваемой переменной значения формы
-		// var data = $("#form").serialize();
-		
+		// Приcваиваем переменным значения полей формы
 		var name = $("#name").val();
         var email = $("#email").val();
 		var comment = $("#comment").val();
 		
-		// Отправляем данные формы ajax методом
+		// Отправляем данные формы методом ajax
 		$.ajax({
-			// data: data,
 			data: "name=" + name+ "&email=" + email+ "&comment=" + comment,
 			type: "post",
 			url: "insert_comment.php",

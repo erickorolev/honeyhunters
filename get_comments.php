@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "honeyhunters";
+require 'db_login.php';
 
 // Создаем подключение
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -23,10 +20,16 @@ $result = mysqli_query($conn, $sql);
 // Проверяем наличие данных
 if (mysqli_num_rows($result) > 0) {
     // Отображаем данные
-    while($row = mysqli_fetch_assoc($result)) {
-        echo "Name: " . $row["name"] . "<br>";
-		echo "Email: " . $row["email"] . "<br>";
-		echo "Comment: " . $row["comment"] . "<br>";
+    while($row = mysqli_fetch_assoc($result)) {	
+		echo '<div class="row comment-avtor-gray">';
+		echo '<p class="text-center">' . $row["name"] . '</p>';
+		echo '</div>';
+		echo '<div class="row comment-email-gray">';
+		echo '<p class="text-center">' . $row["email"] . '</p>';
+		echo '</div>';
+		echo '<div class="row comment-text-gray">';
+		echo '<p class="text-center">' . $row["comment"] . '</p>';
+		echo '</div>';
     }
 } else {
     echo "Нет комментариев";

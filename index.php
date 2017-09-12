@@ -8,6 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="insert_comment_ajax.js"></script>
+<script src="get_comments_ajax.js"></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
 		
 </div>
 
-	<form name="form" action="#" method="post">
+	<form name="form" action="#">
 
 		<div class="row">
 			
@@ -71,15 +72,12 @@
 
 	<div class="row">
 			<div class="col-md-3 col-md-offset-5">
-				<h3>Выводим комментарии</h3>
-			</div>
-			<div class="col-md-3">
-				<button type="submit" class="btn btn-default button" onclick="getComments()">Вывести</button>
+				<h3 class="text-center">Выводим комментарии</h3>
 			</div>
 	</div>
 	
 	<div class="row">
-			<div id="ajax" class="col-md-3 col-md-offset-5">
+			<div id="ajax_response" class="col-md-3 col-md-offset-5">
 				
 			</div>
 	</div>

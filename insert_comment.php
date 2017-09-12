@@ -1,7 +1,7 @@
 <?php
 require 'db_login.php';
 
-if(isset($_POST['email'])) {
+if($_POST['email'] !== 0) {
 
 	// Создаем подключение
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
