@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="ajax.js"></script>
+<script src="insert_comment_ajax.js"></script>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
 		
 </div>
 
-	<form name="form" action="insertcomment.php" method="post">
+	<form name="form" action="#" method="post">
 
 		<div class="row">
 			
@@ -38,12 +38,12 @@
 
 				<div class="form-group required">
 					<label for="name" class='control-label'>Имя</label>
-					<input type="text" class="form-control" name="name" required="required">
+					<input type="text" class="form-control" id="name" required="required">
 				</div>
 
 				<div class="form-group required">
 					<label for="email" class='control-label'>E-mail</label>
-					<input type="email" class="form-control" name="email" required="required">
+					<input type="email" class="form-control" id="email" required="required">
 				</div>
 		
 			</div>
@@ -51,7 +51,7 @@
 			<div class="form-group required">
 				<div class="col-sm-3">
 					<label for="comment" class='control-label'>Комментарий</label>
-					<textarea class="form-control" rows="5" name="comment" required="required"></textarea>
+					<textarea class="form-control" rows="5" id="comment" required="required"></textarea>
 				</div>
 			</div>
 		
@@ -59,7 +59,7 @@
 
 		<div class="row top-buffer bottom-buffer">
 			<div class="col-md-1 col-md-offset-8">
-				<button type="submit" class="btn btn-default button">Записать</button>
+				<button type="submit" id="write" class="btn btn-default button">Записать</button>
 			</div>
 		</div>
 
@@ -71,7 +71,10 @@
 
 	<div class="row">
 			<div class="col-md-3 col-md-offset-5">
-				<button type="submit" class="btn btn-default button" onclick="getComments()">Выводим комментарии</button>
+				<h3>Выводим комментарии</h3>
+			</div>
+			<div class="col-md-3">
+				<button type="submit" class="btn btn-default button" onclick="getComments()">Вывести</button>
 			</div>
 	</div>
 	
