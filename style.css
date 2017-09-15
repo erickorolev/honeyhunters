@@ -1,6 +1,6 @@
-.background-black {
-  background-color: rgb(45, 49, 54);
-  color: white;
+.background-black, input, textarea {
+  background-color: rgb(45, 49, 54) !important;
+  color: white !important;
 }
 
 .top-buffer { 

@@ -15,7 +15,7 @@
 
 <div class="row">
 
-		<div class="col-sm-2 col-md-offset-3">
+		<div class="col-sm-2 col-sm-offset-2 col-md-offset-3">
 			<p><img src="images/logo_big.png" alt="Honey Hunters logo"></p>
 		</div>
 		
@@ -24,8 +24,8 @@
 
 <div class="row">
 		
-		<div class="col-sm-2 col-md-offset-5">
-			<p><img src="images/contact_icon.png" alt="Honey Hunters logo"></p>
+		<div class="col-xs-12">
+			<p align="center"><img src="images/contact_icon.png" alt="Honey Hunters logo"></p>
 		</div>
 		
 </div>
@@ -34,7 +34,7 @@
 
 		<div class="row">
 			
-			<div class="col-sm-3 col-md-offset-3">
+			<div class="col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
 
 				<div class="form-group required">
 					<label for="name" class='control-label'>Имя</label>
@@ -49,7 +49,7 @@
 			</div>
 		
 			<div class="form-group required">
-				<div class="col-sm-3">
+				<div class="col-sm-4 col-md-3">
 					<label for="comment" class='control-label'>Комментарий</label>
 					<textarea class="form-control" rows="5" id="comment" required="required"></textarea>
 				</div>
@@ -58,7 +58,7 @@
 		</div>
 
 		<div class="row top-buffer bottom-buffer">
-			<div class="col-md-1 col-md-offset-8">
+			<div class="col-sm-1 col-sm-offset-8">
 				<button type="submit" id="write" class="btn btn-default button">Записать</button>
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 <div class="container top-buffer">
 
 	<div class="row">
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-sm-4 col-sm-offset-4">
 				<h4 class="text-center">Выводим комментарии</h3>
 			</div>
 	</div>
@@ -84,11 +84,11 @@
 
 	<div class="row">
 
-		<div class="col-sm-2 col-md-offset-3">
+		<div class="col-xs-3 col-sm-offset-2 col-md-offset-3">
 			<p><img src="images/logo_small.png" alt="Honey Hunters logo"></p>
 		</div>
 		
-		<div class="col-sm-2 col-md-offset-2">
+		<div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-2 col-md-5 col-md-offset-1">
 			<img src="images/vk_icon.png" alt="Vkontake icon">
 			<img src="images/facebook_icon.png" alt="Facebook icon">
 		</div>

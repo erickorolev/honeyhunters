@@ -37,12 +37,12 @@ if (mysqli_num_rows($result) > 0) {
 			
 			if($counter == 1) {
 				echo '<div class="row">';
-				echo '<div class="col-sm-2 col-md-offset-3 top-buffer">';
+				echo '<div class="col-md-2 col-md-offset-3">';
 			} else {
-				echo '<div class="col-sm-2 top-buffer">';
+				echo '<div class="col-md-2">';
 			}
 			
-			echo '<div class="col-sm-12">';
+			echo '<div class="col-sm-12 top-buffer">';
 			
 			echo '<div class="row comment-avtor-' . $style . '">';
 			echo '<p class="text-center">' . $row["name"] . '</p>';
