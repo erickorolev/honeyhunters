@@ -3,7 +3,7 @@ $(document).ready(function(){
 	// При отправки формы
 	$("#add_comment").submit(function(e) {
 		
-		e.preventDefault();
+		e.preventDefault(); // Предотвращаем отправку форму браузером
 		
 		// Приcваиваем переменным значения полей формы
 		var name = $("#name").val();
@@ -18,10 +18,22 @@ $(document).ready(function(){
 			success: function(data){
 				// Очищаем поля формы
 				$("#add_comment")[0].reset();
+				
+				// Получаем данные ajax-запросом из файла get_comments.php
+	
+				var response = '';
+				
+				$.ajax({
+					type: "get",
+					dataType: "html", 
+					url: "get_comments.php",
+					success: function(response){
+						// Размещаем данные в контейнер
+						$("#ajax_response").html(response); 
+					}
+				});
 			}
 		});
-		
-		
 		
 	});
 	

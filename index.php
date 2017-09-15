@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="insert_comment_ajax.js"></script>
-<script src="get_comments_ajax.js"></script>
+<script src="add_get_comments_ajax.js"></script>
 </head>
 <body>
 
@@ -71,8 +70,8 @@
 <div class="container top-buffer">
 
 	<div class="row">
-			<div class="col-md-3 col-md-offset-5">
-				<h3 class="text-center">Выводим комментарии</h3>
+			<div class="col-md-4 col-md-offset-4">
+				<h4 class="text-center">Выводим комментарии</h3>
 			</div>
 	</div>
 	
