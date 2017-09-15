@@ -9,17 +9,6 @@ if (!$conn) {
 	die("Ошибка подключения к базе данных: " . mysqli_connect_error());
 }
 
-/*
-// Тут необходимо проверить, существует ли таблица. Если нет, то необходимо ее создать.
-// Создаем таблицу "Комментарии"
-$sql = "CREATE TABLE comments (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-name NVARCHAR(30) NOT NULL,
-email NVARCHAR(50) NOT NULL,
-comment NVARCHAR(4000) NOT NULL
-)";
-*/
-
 // Подготавливаем данные для формирования SQL запросов
 $name = clean_input($_POST['name']);
 $email = clean_input($_POST['email']);
