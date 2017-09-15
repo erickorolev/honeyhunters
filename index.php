@@ -31,7 +31,7 @@
 		
 </div>
 
-	<form name="form" action="#">
+	<form name="form" id="add_comment" action="insert_comment.php" method="POST">
 
 		<div class="row">
 			

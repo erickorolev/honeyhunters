@@ -1,10 +1,12 @@
 $(document).ready(function(){
 	
-	// При клике на кнопку "Записать".
-	$("#write").click(function() {
+	// При отправке формы
+	$("#add_comment").submit(function(e) {
 		
+		e.preventDefault();
+			
 		var response = '';
-		
+	
 		// Получаем данные ajax-запросом из файла get_comments.php
 		$.ajax({
 			type: "get",
