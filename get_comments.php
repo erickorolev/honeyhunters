@@ -20,19 +20,55 @@ $result = mysqli_query($conn, $sql);
 // Проверяем наличие данных
 if (mysqli_num_rows($result) > 0) {
     // Отображаем данные
-    while($row = mysqli_fetch_assoc($result)) {	
-		echo '<div class="row comment-avtor-gray">';
-		echo '<p class="text-center">' . $row["name"] . '</p>';
-		echo '</div>';
-		echo '<div class="row comment-email-gray">';
-		echo '<p class="text-center">' . $row["email"] . '</p>';
-		echo '</div>';
-		echo '<div class="row comment-text-gray">';
-		echo '<p class="text-center">' . $row["comment"] . '</p>';
-		echo '</div>';
-    }
+	
+	$counter = 0;
+	
+	$style = "gray";
+	
+    while($row = mysqli_fetch_assoc($result)) {
+		
+			$counter ++;
+			
+			if ($style == "gray") {
+				$style = "green";
+			} else {
+				$style = "gray";
+			}
+			
+			if($counter == 1) {
+				echo '<div class="row">';
+				echo '<div class="col-sm-2 col-md-offset-3 top-buffer">';
+			} else {
+				echo '<div class="col-sm-2 top-buffer">';
+			}
+			
+			echo '<div class="col-sm-12">';
+			
+			echo '<div class="row comment-avtor-' . $style . '">';
+			echo '<p class="text-center">' . $row["name"] . '</p>';
+			echo '</div>';
+			
+			echo '<div class="row comment-email-' . $style . '">';
+			echo '<p class="text-center">' . $row["email"] . '</p>';
+			echo '</div>';
+			
+			echo '<div class="row comment-text-' . $style . '">';
+			echo '<p class="text-center">' . $row["comment"] . '</p>';
+			echo '</div>';
+			
+			echo '</div>';
+			
+			echo '</div>';
+			
+			if($counter == 3) {
+				echo '</div>';
+				$counter = 0;
+				
+			} 
+			
+	}
 } else {
-    echo "Нет комментариев";
+	echo "Нет комментариев";
 }
 
 // Отключаемся от базы данных
